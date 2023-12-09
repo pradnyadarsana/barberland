@@ -1,0 +1,12 @@
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/bin/Debug/net7.0/Barberland.Data.deps.json
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/bin/Debug/net7.0/Barberland.Data.dll
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/bin/Debug/net7.0/Barberland.Data.pdb
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/obj/Debug/net7.0/Barberland.Data.csproj.AssemblyReference.cache
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/obj/Debug/net7.0/Barberland.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/obj/Debug/net7.0/Barberland.Data.AssemblyInfoInputs.cache
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/obj/Debug/net7.0/Barberland.Data.AssemblyInfo.cs
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/obj/Debug/net7.0/Barberland.Data.csproj.CoreCompileInputs.cache
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/obj/Debug/net7.0/Barberland.Data.dll
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/obj/Debug/net7.0/refint/Barberland.Data.dll
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/obj/Debug/net7.0/Barberland.Data.pdb
+/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/obj/Debug/net7.0/ref/Barberland.Data.dll

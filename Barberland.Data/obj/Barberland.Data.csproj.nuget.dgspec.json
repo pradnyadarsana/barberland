@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/Barberland.Data.csproj": {}
+  },
+  "projects": {
+    "/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/Barberland.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/Barberland.Data.csproj",
+        "projectName": "Barberland.Data",
+        "projectPath": "/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/Barberland.Data.csproj",
+        "packagesPath": "/Users/pradnyadarsana/.nuget/packages/",
+        "outputPath": "/Users/pradnyadarsana/Documents/Workspace/Web Projects/Barberland/Barberland.Net/Barberland/Barberland.Data/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/pradnyadarsana/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "EFCore.NamingConventions": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.307/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
