@@ -8,6 +8,8 @@ namespace Barberland.Data.Entity
 		public required string Mobile { get; set; }
 		public required string Username { get; set; }
 		public required string Password { get; set; }
-	}
+
+        public virtual ICollection<Order>? Orders { get; set; }
+    }
 }
 

@@ -10,6 +10,10 @@ namespace Barberland.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Barbershop> Barbershops { get; set; }
+        public DbSet<ServiceCategory> ServiceCategories { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {

@@ -3,6 +3,7 @@ using System;
 using Barberland.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Barberland.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231209081636_BarberlandMigration_v2")]
+    partial class BarberlandMigration_v2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,11 +76,6 @@ namespace Barberland.Web.Migrations
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("name");
-
-                    b.Property<string>("Permalink")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("permalink");
 
                     b.Property<string>("UpdatedBy")
                         .IsRequired()
@@ -154,142 +152,6 @@ namespace Barberland.Web.Migrations
                     b.ToTable("customer", (string)null);
                 });
 
-            modelBuilder.Entity("Barberland.Data.Entity.Order", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<Guid>("BarbershopId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("barbershop_id");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("created_by");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_date");
-
-                    b.Property<Guid>("CustomerId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("customer_id");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_deleted");
-
-                    b.Property<string>("OrderCode")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("order_code");
-
-                    b.Property<DateTime>("OrderDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("order_date");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("integer")
-                        .HasColumnName("status");
-
-                    b.Property<TimeSpan>("TotalDurationEst")
-                        .HasColumnType("interval")
-                        .HasColumnName("total_duration_est");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("numeric")
-                        .HasColumnName("total_price");
-
-                    b.Property<string>("UpdatedBy")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("updated_by");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_date");
-
-                    b.HasKey("Id")
-                        .HasName("pk_order");
-
-                    b.HasIndex("BarbershopId")
-                        .HasDatabaseName("ix_order_barbershop_id");
-
-                    b.HasIndex("CustomerId")
-                        .HasDatabaseName("ix_order_customer_id");
-
-                    b.ToTable("order", (string)null);
-                });
-
-            modelBuilder.Entity("Barberland.Data.Entity.OrderDetail", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("created_by");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_date");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text")
-                        .HasColumnName("description");
-
-                    b.Property<TimeSpan>("DurationEst")
-                        .HasColumnType("interval")
-                        .HasColumnName("duration_est");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_deleted");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("name");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("order_id");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("numeric")
-                        .HasColumnName("price");
-
-                    b.Property<Guid>("ServiceCategoryId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("service_category_id");
-
-                    b.Property<string>("UpdatedBy")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("updated_by");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_date");
-
-                    b.HasKey("Id")
-                        .HasName("pk_order_detail");
-
-                    b.HasIndex("OrderId")
-                        .HasDatabaseName("ix_order_detail_order_id");
-
-                    b.HasIndex("ServiceCategoryId")
-                        .HasDatabaseName("ix_order_detail_service_category_id");
-
-                    b.ToTable("order_detail", (string)null);
-                });
-
             modelBuilder.Entity("Barberland.Data.Entity.ServiceCategory", b =>
                 {
                     b.Property<Guid>("Id")
@@ -326,11 +188,6 @@ namespace Barberland.Web.Migrations
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("name");
-
-                    b.Property<string>("Permalink")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("permalink");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric")
@@ -354,48 +211,6 @@ namespace Barberland.Web.Migrations
                     b.ToTable("service_category", (string)null);
                 });
 
-            modelBuilder.Entity("Barberland.Data.Entity.Order", b =>
-                {
-                    b.HasOne("Barberland.Data.Entity.Barbershop", "Barbershop")
-                        .WithMany("Orders")
-                        .HasForeignKey("BarbershopId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_order_barbershop_barbershop_id");
-
-                    b.HasOne("Barberland.Data.Entity.Customer", "Customer")
-                        .WithMany("Orders")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_order_customer_customer_id");
-
-                    b.Navigation("Barbershop");
-
-                    b.Navigation("Customer");
-                });
-
-            modelBuilder.Entity("Barberland.Data.Entity.OrderDetail", b =>
-                {
-                    b.HasOne("Barberland.Data.Entity.Order", "Order")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_order_detail_order_order_id");
-
-                    b.HasOne("Barberland.Data.Entity.ServiceCategory", "ServiceCategory")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("ServiceCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_order_detail_service_category_service_category_id");
-
-                    b.Navigation("Order");
-
-                    b.Navigation("ServiceCategory");
-                });
-
             modelBuilder.Entity("Barberland.Data.Entity.ServiceCategory", b =>
                 {
                     b.HasOne("Barberland.Data.Entity.Barbershop", "Barbershop")
@@ -410,24 +225,7 @@ namespace Barberland.Web.Migrations
 
             modelBuilder.Entity("Barberland.Data.Entity.Barbershop", b =>
                 {
-                    b.Navigation("Orders");
-
                     b.Navigation("ServiceCategories");
-                });
-
-            modelBuilder.Entity("Barberland.Data.Entity.Customer", b =>
-                {
-                    b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("Barberland.Data.Entity.Order", b =>
-                {
-                    b.Navigation("OrderDetails");
-                });
-
-            modelBuilder.Entity("Barberland.Data.Entity.ServiceCategory", b =>
-                {
-                    b.Navigation("OrderDetails");
                 });
 #pragma warning restore 612, 618
         }
