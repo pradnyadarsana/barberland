@@ -1,0 +1,31 @@
+﻿@model FooterViewModel
+<!-- Start Contact Section -->
+<div class="offset">
+    <footer>
+        <div class="row justify-content-center">
+            <div class="col-md-5 text-center">
+                <img src="~/img/barberland-logo.png" asp-append-version="false" style="height:8rem">
+                <p>
+                    @Model.FooterDescription
+                </p>
+                <h5 style="letter-spacing:.1rem">Contact Info</h5>
+                <p>@Model.FooterContactMobile<br>@Model.FooterContactEmail</p>
+                @if (!string.IsNullOrEmpty(Model.FacebookURL))
+                {
+                    <a href="@Model.FacebookURL" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                }
+                @if (!string.IsNullOrEmpty(Model.TwitterURL))
+                {
+                    <a href="@Model.TwitterURL" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                }
+                @if (!string.IsNullOrEmpty(Model.InstagramURL))
+                {
+                    <a href="@Model.InstagramURL" target="_blank"><i class="fab fa-instagram"></i></a>
+                }
+            </div>
+            <hr class="socket">
+            &copy; @Model.FooterCopyright
+        </div>
+    </footer>
+</div>
+<!-- End Contact Section -->

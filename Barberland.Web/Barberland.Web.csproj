@@ -21,4 +21,14 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="ViewComponents\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\Widget\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewComponents\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\Widget\" />
+  </ItemGroup>
 </Project>

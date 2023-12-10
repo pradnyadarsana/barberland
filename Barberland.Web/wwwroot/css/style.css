@@ -1,0 +1,515 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap');
+
+/* ================================= BASE STYLING =================================*/
+html {
+    scroll-behavior: smooth; /* depending on browser */
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Montserrat';
+    font-family: 'Bebas Neue', cursive; /**/
+    color: #505962;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue';
+    text-transform: uppercase;
+}
+
+p, small, input, textarea, span, select, option {
+    font-family: 'Montserrat';
+}
+
+.field-validation-error {
+    color: red;
+}
+
+.offset:before {
+    display: block;
+    content: "";
+    height: 5.6rem;
+    margin-top: -5.6rem;
+}
+
+/* ================================= END OF BASE STYLING =================================*/
+
+
+/* ================================= NAVIGATION BAR =================================*/
+.navbar {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    background: rgba(0,0,0,0.7) !important;
+}
+
+.navbar-brand img {
+    height: 4rem;
+    /*for bebas neue*/
+    letter-spacing: 0.13rem;
+    font-size: 1.3rem;
+}
+
+.navbar-nav li {
+    padding-right: .7rem;
+    /*for bebas neue*/
+    letter-spacing: .1rem;
+    font-size: 1.1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    padding-top: .8rem;
+}
+
+    .navbar-dark .navbar-nav .nav-link.active,
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: #767676;
+    }
+
+/* ================================= END OF NAVIGATION BAR =================================*/
+
+
+/* ================================= HOME PAGE =================================*/
+
+/* ================================= HOME PAGE - LANDING SECTION =================================*/
+/* .home-inner{
+  background-image: url(img/computers.png);
+} */
+.carousel-item {
+    height: 100vh;
+}
+
+.caption {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 38%;
+    z-index: 0;
+    color: white;
+    text-transform: uppercase;
+}
+
+    .caption h1 {
+        font-size: 5rem;
+        font-weight: 700;
+        letter-spacing: .3rem;
+        text-shadow: .1rem .1rem .8rem black;
+        padding-bottom: 1rem;
+    }
+
+    .caption h3 {
+        font-size: 2rem;
+        text-shadow: .1rem .1rem .5rem black;
+        padding-bottom: 1.6rem;
+    }
+
+.btn-lg {
+    border-width: medium;
+    border-radius: 0;
+    padding: .6rem 1.3rem;
+    font-size: 1.1rem;
+}
+/* ================================= HOME PAGE - END OF LANDING SECTION =================================*/
+
+/* ================================= HOME PAGE - PRODUCT SHOP SECTION =================================*/
+.narrow {
+    width: 75%;
+    margin: 1.5rem auto;
+    padding-top: 2rem;
+}
+
+    .narrow h1 {
+        font-size: 3.5rem;
+    }
+
+.btn-product-home {
+    border-width: .16rem;
+    border-radius: 0;
+    padding: .6rem 1.2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 1rem;
+    border-color: #505962;
+    color: #505962;
+    letter-spacing: .07rem;
+}
+
+    .btn-product-home:hover,
+    .btn-product-home:focus {
+        border-color: #505962;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: whitesmoke;
+    }
+
+.card-product {
+    border: 1px solid transparent;
+    color: inherit;
+    text-decoration: none;
+}
+
+    .card-product:hover,
+    .card-product:focus {
+        opacity: .8;
+        background: #fcfcfc;
+        border: 1px solid #d0d0d0;
+        border-radius: .1rem;
+        cursor: pointer;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .card-product .card-img-top img {
+        object-fit: contain;
+    }
+/* ================================= HOME PAGE - END OF PRODUCT SHOP SECTION =================================*/
+
+/* ================================= HOME PAGE - GALLERY SECTION =================================*/
+.jumbotron {
+    margin-bottom: 0;
+    padding: 2rem 0 3.5rem;
+    border-radius: 0;
+}
+
+h1.heading {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1.9rem;
+}
+
+.heading-underline {
+    width: 3rem;
+    height: .2rem;
+    background-color: #b9b9b9;
+    margin: 0 auto 2rem;
+}
+
+.feature svg.svg-inline--fa {
+    color: #1ebba3;
+}
+
+.feature h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    padding-bottom: .4rem;
+}
+
+.feature p {
+    font-size: 1.1rem;
+}
+
+#gallery.home-page .narrow {
+    max-width: 75%;
+    margin: auto;
+    padding-top: 0rem;
+}
+
+.fixed {
+    /*background-image: url(../img/apple.png);*/
+    z-index: -1;
+}
+
+.dark {
+    background-color: rgba(0,0,0,0.75);
+    color: white;
+    padding: 5rem 2rem;
+}
+
+.fixed-background h3 {
+    margin-bottom: 2rem;
+}
+
+.fixed-background p {
+    margin-top: 1.5rem;
+}
+
+.card-artwork {
+    border: 1px solid transparent;
+    color: inherit;
+    text-decoration: none;
+}
+
+.artwork-img-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.text {
+    color: #161616;
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.card-artwork .card-img-top img {
+    object-fit: contain;
+}
+
+a.card-artwork:hover .artwork-img-overlay {
+    opacity: 1;
+}
+
+.btn-artwork-home {
+    border-width: .16rem;
+    border-radius: 0;
+    padding: .6rem 1.2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 1rem;
+    border-color: #e2e2e2;
+    color: #dedede;
+    letter-spacing: .07rem;
+}
+
+    .btn-artwork-home:hover,
+    .btn-artwork-home:focus {
+        border-color: #505962;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #1e1e1e;
+    }
+
+/* ================================= HOME PAGE - END OF GALLERY SECTION =================================*/
+
+/* ================================= HOME PAGE - CONTACT US SECTION =================================*/
+.contact-us-form label {
+    font-size: 1.2rem;
+}
+
+.btn-contact-us {
+    border-width: .16rem;
+    border-radius: 0;
+    padding: .6rem 1.2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 1rem;
+    border-color: #626262;
+    color: #626262;
+    letter-spacing: .07rem;
+}
+
+    .btn-contact-us:hover,
+    .btn-contact-us:focus {
+        border-color: #626262;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: whitesmoke;
+    }
+
+/* ================================= HOME PAGE - END OF CONTACT US SECTION =================================*/
+
+/* ================================= END OF HOME PAGE =================================*/
+
+
+/* ================================= FOOTER =================================*/
+footer {
+    background-color: #212121;
+    color: white;
+    padding: 2rem 0 2rem;
+    margin-top: 1rem;
+}
+
+    footer img {
+        height: 3rem;
+        margin: 1.5rem 0;
+    }
+
+    footer a {
+        color: white;
+    }
+
+        footer a:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+
+    footer svg.svg-inline--fa {
+        font-size: 1.6rem;
+        margin: 1.2rem .5rem 0 0;
+    }
+
+        footer svg.svg-inline--fa:hover {
+            color: #bababa !important;
+        }
+
+hr.socket {
+    width: 100%;
+    border-top: .2rem solid #353535;
+    margin-top: 3rem;
+}
+/* ================================= END OF FOOTER =================================*/
+
+
+/* ================================= PRODUCT SHOP PAGE =================================*/
+#shop.shop-page .landing {
+    height: 35vh;
+}
+
+#shop.shop-page .caption {
+    top: 12.5%;
+}
+/*#shop.shop-page .home-inner {
+    background-image: url(../img/computers.png);
+}*/
+.badge-danger.badge-percent {
+    color: #ffffff;
+    background-color: #ff3f3f;
+    font-size: .75rem;
+    vertical-align: middle;
+}
+/* ================================= END OF PRODUCT SHOP PAGE =================================*/
+
+/* ================================= PRODUCT DETAIL PAGE =================================*/
+#shop.product-detail-page .landing {
+    height: 7vh;
+}
+
+#shop.product-detail-page #productCarousel {
+    height: fit-content;
+}
+
+#shop.product-detail-page .carousel-inner {
+    height: fit-content;
+}
+
+#shop.product-detail-page .carousel-item {
+    height: fit-content;
+}
+
+    #shop.product-detail-page .carousel-item img {
+        object-fit: contain;
+    }
+
+#shop.product-detail-page #productCarousel .carousel-indicators {
+    position: static;
+    margin-top: 20px;
+}
+
+    #shop.product-detail-page #productCarousel .carousel-indicators > li {
+        width: 100px;
+        height: fit-content;
+    }
+
+    #shop.product-detail-page #productCarousel .carousel-indicators li img {
+        display: block;
+        opacity: 0.5;
+        object-fit: contain;
+    }
+
+    #shop.product-detail-page #productCarousel .carousel-indicators li.active img {
+        opacity: 1
+    }
+
+    #shop.product-detail-page #productCarousel .carousel-indicators li:hover img {
+        opacity: 0.75
+    }
+
+#shop.product-detail-page h1 {
+    font-size: 3.2rem;
+}
+
+#shop.product-detail-page .price-text {
+    font-size: 1.5rem;
+}
+/* ================================= END OF PRODUCT DETAIL PAGE =================================*/
+
+/* ================================= ARTWORK GALLERY PAGE =================================*/
+#gallery.gallery-page .landing {
+    height: 35vh;
+}
+
+#gallery.gallery-page .caption {
+    top: 12.5%;
+}
+
+/*#gallery.gallery-page .home-inner {
+    background-image: url(../img/computers.png);
+}*/
+/* ================================= END OF ARTWORK GALLERY PAGE =================================*/
+
+
+/* ================================= MEDIA QUERIES =================================*/
+@media (max-width: 767px) {
+    .caption h1 {
+        font-size: 2.5rem;
+        letter-spacing: .15rem;
+        padding-bottom: .5rem;
+    }
+
+    .caption h3 {
+        font-size: 1.2rem;
+        padding-bottom: 1.2rem;
+    }
+
+    .btn-lg {
+        padding: .5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .narrow h1 {
+        font-size: 2.5rem;
+    }
+
+    .clients img {
+        max-width: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .lead {
+        display: none;
+    }
+
+    .narrow {
+        width: 90%;
+        margin: 1rem auto;
+        padding-top: 2rem;
+    }
+
+    #shop.product-detail-page h1 {
+        font-size: 2.2rem;
+    }
+
+    #shop.product-detail-page .price-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .narrow {
+        width: 90%;
+        margin: 1rem auto;
+        padding-top: 2rem;
+    }
+}
+
+/*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+=============*/

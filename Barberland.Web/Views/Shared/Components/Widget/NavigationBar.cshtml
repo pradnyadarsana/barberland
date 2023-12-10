@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Barberland";
+    string Controller = ViewContext.RouteData.Values["controller"].ToString();
+    string Action = ViewContext.RouteData.Values["action"].ToString();
+
+    string HomeUrl = Controller == "Home" && Action == "Index" ? "#home" : Url.Action("Index", "Home");
+    string ShopUrl = (Controller == "Home" && Action == "Index") || (Controller == "Product" && Action == "Index") ? "#shop" : Url.Action("Index", "Product");
+    string GalleryUrl = (Controller == "Home" && Action == "Index") || (Controller == "Artwork" && Action == "Index") ? "#gallery" : "/gallery";
+    string ContactUrl = Controller == "Home" && Action == "Index" ? "#contact" : string.Format("{0}{1}", Url.Action("Index", "Home"), "#contact");
+    string AboutUrl = "/about";
+}
+
+<!-- Start Home Section -->
+<div id="home">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/"><img src="~/img/barberland-logo.png" asp-append-version="false"> BARBERLAND</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="@HomeUrl" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@ShopUrl" class="nav-link">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@GalleryUrl" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@ContactUrl" class="nav-link">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@AboutUrl" class="nav-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End Navigation-->
+</div>
+<!-- End Home Section -->
