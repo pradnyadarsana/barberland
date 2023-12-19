@@ -1,6 +1,7 @@
 ﻿using Barberland.Data;
 using Barberland.Data.Entity;
 using Barberland.Data.Repository;
+using Barberland.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,13 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 //builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IServiceCategoryRepository, ServiceCategoryRepository>();
+builder.Services.AddScoped<IServiceCategoryImageRepository, ServiceCategoryImageRepository>();
+builder.Services.AddScoped<IBarbershopRepository, BarbershopRepository>();
+
+builder.Services.AddTransient<IHomePageService, HomePageService>();
+
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
 var app = builder.Build();
 

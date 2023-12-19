@@ -1,0 +1,32 @@
+﻿@using Barberland.Utility
+@model List<ServiceCategoryIndexModel>
+
+<div class="product-list">
+    <div class="row card-group justify-content-center" style="flex-direction:inherit;">
+        @foreach (var serviceCategory in Model)
+        {
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                <div class="card card-product">
+                    <div class="card-img-top ratio ratio-1x1">
+                        <img class="img-fluid" src="@serviceCategory.ImgThumbnailUrl" alt="@serviceCategory.Name">
+                    </div>
+                    <div class="card-body">
+                        <small class="text-muted">@serviceCategory.BarbershopName</small>
+                        <h5 class="card-title">@serviceCategory.Name</h5>
+                        @*@{
+                decimal CurrentPrice = product.Price - product.Discount.GetValueOrDefault();
+                int DiscountPercent = product.Discount.HasValue ? (int)decimal.Round(product.Discount.Value * 100 / product.Price) : 0;
+            }*@
+                        <p class="card-text" style="margin-bottom:0rem;">IDR @GlobalFunction.CreateDecimalMoneyFormatIDR(serviceCategory.Price)</p>
+                        @*@if (product.Discount.HasValue && product.Discount.GetValueOrDefault() != 0)
+            {
+                <p class="card-text"><small><del>IDR @GlobalFunction.CreateDecimalMoneyFormatIDR(serviceCategory.Price)</del>&nbsp;&nbsp;<span class="badge badge-danger badge-percent">@string.Format(DiscountPercent + "%")</span></small></p>
+            }*@
+                    </div>
+                    <a href="@string.Format("/{0}", serviceCategory.Permalink)" class="stretched-link">
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

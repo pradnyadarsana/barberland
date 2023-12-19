@@ -1,27 +1,28 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Barberland.Web.Models;
-using Barberland.Data.Entity;
-using Barberland.Data.Repository;
-using Barberland.Data;
+using Barberland.Model;
+using Barberland.Service;
 
 namespace Barberland.Web.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly ICustomerRepository _customerRepository;
+    private readonly IHomePageService _homePageService;
 
-    public HomeController(ILogger<HomeController> logger, ICustomerRepository customerRepository)
+    public HomeController(ILogger<HomeController> logger, IHomePageService homePageService)
     {
         _logger = logger;
-        _customerRepository = customerRepository;
+        _homePageService = homePageService;
     }
-
+    
     public IActionResult Index()
     {
-        List<Customer> customers = _customerRepository.GetAll().ToList();
-        return View();
+        HomeIndexViewModel indexViewModel = new();
+        indexViewModel = _homePageService.GetIndexDataModel();
+
+        return View(indexViewModel);
     }
 
     public IActionResult Privacy()

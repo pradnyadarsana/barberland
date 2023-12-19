@@ -1,9 +1,191 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model HomeIndexViewModel
+@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Start Landing Page Section -->
+<div class="landing">
+    <div class="home-wrap">
+        <div class="home-inner">
+            <!-- Start Image Slider -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-interval="7000">
+                <div class="carousel-inner" role="listbox">
+                    @*@foreach (Banner banner in Model.MainCarouselBanners)
+                    {
+                        <div class="carousel-item @string.Format(banner.ID == Model.MainCarouselBanners[0].ID ? "active" : "")" style="background-image: url(@banner.ImgBannerURL)">
+                            <div class="carousel-caption text-center">
+                                    <!--<h1>WELCOME TO MY PAGE</h1>
+                                    <h3>SUBTITLE</h3>
+                                    <a href="#course" class="btn btn-outline-light btn-lg">Get Started Button</a>-->
+                                    </div>
+                        </div>
+                    }*@
+                    <div class="carousel-item active" style="background-image:url('../../img/carousel-1.jpeg')">
+                        <div class="carousel-caption text-center">
+                            @*<h1>WELCOME TO MY PAGE</h1>
+                            <h3>SUBTITLE</h3>
+                            <a href="#course" class="btn btn-outline-light btn-lg">Get Started Button</a>*@
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" style="background-image: url('../../img/carousel-2.jpeg')">
+                        <div class="carousel-caption text-center">
+                            @*<h1>WELCOME TO MY PAGE</h1>
+                            <h3>SUBTITLE</h3>
+                            <a href="#course" class="btn btn-outline-light btn-lg">Get Started Button</a>*@
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('../../img/carousel-3.jpeg')">
+                        <div class="carousel-caption text-center">
+                            @*<h1>WELCOME TO MY PAGE</h1>
+                            <h3>SUBTITLE</h3>
+                            <a href="#course" class="btn btn-outline-light btn-lg">Get Started Button</a>*@
+                        </div>
+                    </div>
+                </div><!-- End Carousel Inner -->
+            </div>
+            <!-- End Image Slider -->
+        </div>
+        <div class="carousel-indicators">
+            @*@for (int i = 0; i < Model.MainCarouselBanners.Count; i++)
+            {
+                <li data-target="#carouselExampleIndicators" data-slide-to="@i" class="@string.Format(i == 0 ? "active" : "")"></li>
+            }*@
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="caption text-center">
+            <h1>@Model.HeaderTitleText</h1>
+            <h3>@Model.HeaderSubtitleText</h3>
+        </div>
+        <button data-bs-target="#carouselExampleIndicators" class="carousel-control-prev" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button data-bs-target="#carouselExampleIndicators" class="carousel-control-next" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+    
 </div>
+
+<!-- </div> -->
+<!-- End Landing Page Section -->
+
+<!-- Start Shop Section -->
+<div id="shop" class="offset">
+    <div class="col-12 narrow text-center">
+        <h1>Services</h1>
+        <p class="lead">
+            @Model.ServiceDescription
+        </p>
+        <div id="ProductListSection">
+            @await Component.InvokeAsync("ServiceCategory", new { serviceCategories = Model.ServiceCategories, viewName = "HomeIndex" })
+        </div>
+        <a href="@Url.Action("Index", "ServiceCategory")" class="btn btn-outline-secondary btn-md btn-product-home">
+            More Services
+        </a>
+    </div>
+</div>
+<!-- End Shop Section -->
+
+<!-- Start Gallery Section -->
+<div id="gallery" class="home-page offset">
+    <div class="fixed-background dark">
+        <div class="row text-center">
+            <div class="col-12 narrow">
+                <h1 class="heading">Barbershops</h1>
+                <p class="lead">
+                    @Model.BarbershopDescription
+                </p>
+                <div class="heading-underline"></div>
+            </div>
+        </div> <!-- End Row Dark -->
+        <div class="narrow">
+            @await Component.InvokeAsync("Barbershop", new { barbershops = Model.Barbershops, viewName = "HomeIndex"})
+        </div>
+        <div class="row text-center">
+            <div class="col-12 narrow">
+                <a href="@Url.Action("Index", "Barbershop")" class="btn btn-outline-secondary btn-md btn-artwork-home">
+                        More Barbershops
+                    </a>
+            </div>
+        </div>
+        <div class="fixed-wrap">
+            <div class="fixed" style="background-image: url('../../img/carousel-1.jpeg')">
+
+                </div>
+        </div>
+    </div> <!-- End Fixed Background -->
+</div>
+<!-- End Gallery Section -->
+<!-- Start Contact Us Section-->
+<div class="contact-us-section">
+    @*@await Component.InvokeAsync("Home")*@
+</div>
+<!-- End Contact Us Section -->
+
+@section Scripts
+{
+    <script>
+        ////work on any browser
+        //$("nav ul li a[href^='#']").on('click', function(e) {
+
+        //	// prevent default anchor click behavior
+        //	e.preventDefault();
+
+        //	// store hash
+        //	var hash = this.hash;
+
+        //	// animate
+        //	$('html, body').animate({
+        //		scrollTop: $(hash).offset().top
+        //	}, 300, function(){
+
+        //		// when done, add hash to url
+        //		// (default click behaviour)
+        //		window.location.hash = hash;
+        //	});
+
+        //});
+
+        var $carousel = document.getElementById('carouselExampleIndicators');
+        //$carousel = new bootstrap.Carousel($myCarousel);
+        var handled = false;
+        var itemclicked = "";
+        $carousel.addEventListener('slide.bs.carousel', function (e) {
+            var current = $(e.target).find('.carousel-item.active');
+            var indx = $(current).index();
+            if (e.direction == "left" && (indx + 2) > $('.carousel-indicators button').length)
+                indx = -1
+
+            if (!handled) {
+                var indextemp = e.direction == "left" ? indx + 2 : indx - 1 >= 0 ? indx : 3;
+                $('.carousel-indicators button').removeClass('active')
+                $('.carousel-indicators button:nth-child(' + (indextemp) + ')').addClass('active');
+            }
+            else {
+                handled = !handled;
+            }
+        });
+
+        $(".carousel-indicators button").on('click', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            handled = true;
+        });
+
+        function SubmitMessage() {
+            $.ajax({
+                type: "POST",
+                @*url: "@Url.Action(MVC.Home.ContactUs())",
+                data: $("#FormContactUs").serialize(),*@
+                success: function (data) {
+                    $(".contact-us-section").html(data);
+                }
+            });
+        }
+    </script>
+    <!--- End of Script Source Files -->
+}
 

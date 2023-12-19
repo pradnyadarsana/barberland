@@ -12,6 +12,7 @@ namespace Barberland.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Barbershop> Barbershops { get; set; }
         public DbSet<ServiceCategory> ServiceCategories { get; set; }
+        public DbSet<ServiceCategoryImage> ServiceCategoryImages { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
 

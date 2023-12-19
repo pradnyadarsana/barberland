@@ -85,7 +85,7 @@ p, small, input, textarea, span, select, option {
     width: 100%;
     max-width: 100%;
     position: absolute;
-    top: 38%;
+    top: 40%;
     z-index: 0;
     color: white;
     text-transform: uppercase;
@@ -161,7 +161,7 @@ p, small, input, textarea, span, select, option {
     }
 
     .card-product .card-img-top img {
-        object-fit: contain;
+        object-fit: cover;
     }
 /* ================================= HOME PAGE - END OF PRODUCT SHOP SECTION =================================*/
 
@@ -256,10 +256,10 @@ h1.heading {
 }
 
 .card-artwork .card-img-top img {
-    object-fit: contain;
+    object-fit: cover;
 }
 
-a.card-artwork:hover .artwork-img-overlay {
+.card-artwork:hover .artwork-img-overlay {
     opacity: 1;
 }
 

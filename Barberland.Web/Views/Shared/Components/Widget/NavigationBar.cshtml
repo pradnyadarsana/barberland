@@ -13,8 +13,9 @@
 <!-- Start Home Section -->
 <div id="home">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="/"><img src="~/img/barberland-logo.png" asp-append-version="false"> BARBERLAND</a>
+    <nav class="navbar mh-2 navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container-fluid d-flex">
+            <a class="navbar-brand" href="/"><img src="~/img/barberland-logo.png" asp-append-version="false"> BARBERLAND</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,21 +23,35 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="@HomeUrl" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a href="@ShopUrl" class="nav-link">Shop</a>
+                    <a href="#" class="nav-link">Barbershops</a>
                 </li>
-                <li class="nav-item">
-                    <a href="@GalleryUrl" class="nav-link">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a href="@ContactUrl" class="nav-link">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="@AboutUrl" class="nav-link">About</a>
+                <li>
+                    <form>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Search Barbershop">
+                            <button class="btn btn-outline-secondary" type="button">Search</button>
+                        </div>
+                    </form>
                 </li>
             </ul>
+        </div>
+
+
+            <div class="nav-item dropdown d-flex">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Hello, Pande  <i class="fas fa-user"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Account</a></li>
+                    <li><a class="dropdown-item" href="#">Order history</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
     <!-- End Navigation-->

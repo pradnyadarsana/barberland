@@ -11,6 +11,7 @@ namespace Barberland.Data.Entity
         public required TimeSpan DurationEst { get; set; }
 
         public virtual required Barbershop Barbershop { get; set; }
+        public virtual ICollection<ServiceCategoryImage>? ServiceCategoryImages { get; set; }
         public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
     }
 }

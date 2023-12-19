@@ -12,6 +12,15 @@
     <ProjectReference Include="..\Barberland.Data\Barberland.Data.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\Barberland.Model\Barberland.Model.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Barberland.Service\Barberland.Service.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Barberland.Utility\Barberland.Utility.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
@@ -25,10 +34,14 @@
     <None Remove="ViewComponents\" />
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Widget\" />
+    <None Remove="Views\Shared\Components\Barbershop\" />
+    <None Remove="Views\Shared\Components\ServiceCategory\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewComponents\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Widget\" />
+    <Folder Include="Views\Shared\Components\Barbershop\" />
+    <Folder Include="Views\Shared\Components\ServiceCategory\" />
   </ItemGroup>
 </Project>

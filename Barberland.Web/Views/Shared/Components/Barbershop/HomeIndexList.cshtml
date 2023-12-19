@@ -1,0 +1,26 @@
+﻿@model List<Barbershop>
+
+<div class="artwork-list">
+    <div class="row card-group justify-content-center" style="flex-direction:inherit;">
+        @foreach (var barbershop in Model)
+        {
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                <div class="card ratio ratio-1x1">
+                    <div class="card-body card-artwork align-items-center">
+                        <div class="card-img-top">
+                            <img style="width:100%; height:auto;" class="img-fluid" src="@string.Format("{0}", barbershop.LogoImgUrl)" alt="@string.Format("{0}", barbershop.Name)">
+                        </div>
+                        <div class="artwork-img-overlay text-center">
+                            <div class="text">
+                                <small class="text-muted">@barbershop.Email</small>
+                                <h5 class="card-title">@barbershop.Name</h5>
+                            </div>
+                        </div>
+                        <a href="@string.Format("/{0}", barbershop.Permalink)" class="stretched-link">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
