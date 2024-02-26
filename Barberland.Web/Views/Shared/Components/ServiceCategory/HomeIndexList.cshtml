@@ -1,12 +1,12 @@
 ﻿@using Barberland.Utility
 @model List<ServiceCategoryIndexModel>
 
-<div class="product-list">
+<div class="service-category-list">
     <div class="row card-group justify-content-center" style="flex-direction:inherit;">
         @foreach (var serviceCategory in Model)
         {
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                <div class="card card-product">
+                <div class="card card-service-category">
                     <div class="card-img-top ratio ratio-1x1">
                         <img class="img-fluid" src="@serviceCategory.ImgThumbnailUrl" alt="@serviceCategory.Name">
                     </div>

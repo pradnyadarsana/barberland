@@ -1,5 +1,6 @@
 ﻿using System;
 using Barberland.Data.Entity;
+using Barberland.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Barberland.Web.ViewComponents
@@ -10,23 +11,20 @@ namespace Barberland.Web.ViewComponents
 		{
 		}
 
-        public IViewComponentResult Invoke(List<Barbershop> barbershops/*, int Page = 1, int TotalPages = 1, bool IsShowPagination = true*/, string viewName)
+        public IViewComponentResult Invoke(string viewName, List<Barbershop> barbershops, int pageNumber = 1, int totalPages = 1)
         {
-            //ArtworkListComponentViewModel ViewModel = new();
-
-            //ViewModel.Page = Page;
-            //ViewModel.TotalPages = TotalPages;
-            //ViewModel.IsShowPagination = IsShowPagination;
-            //ViewModel.Artworks = Artworks;
-
-            if (viewName == "HomeIndex")
+            if (viewName == "HomeIndexList")
             {
-                return View("HomeIndexList", barbershops);
+                return View(viewName, barbershops);
             }
-            //else
-            //{
-            //    return View("ArtworkList", ViewModel);
-            //}
+            else if(viewName == "BarbershopIndexList")
+            {
+                BarbershopIndexViewModel viewModel = new();
+                viewModel.Barbershops = barbershops;
+                viewModel.PageNumber = pageNumber;
+                viewModel.TotalPages = totalPages;
+                return View(viewName, viewModel);
+            }
 
             return View("HomeIndexList", new List<Barbershop>());
         }

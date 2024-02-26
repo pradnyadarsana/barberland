@@ -27,6 +27,7 @@ builder.Services.AddScoped<IServiceCategoryImageRepository, ServiceCategoryImage
 builder.Services.AddScoped<IBarbershopRepository, BarbershopRepository>();
 
 builder.Services.AddTransient<IHomePageService, HomePageService>();
+builder.Services.AddTransient<IBarbershopService, BarbershopService>();
 
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 

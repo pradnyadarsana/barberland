@@ -37,7 +37,7 @@ namespace Barberland.Web.ViewComponents
                 FooterDescription = "Test Footer Description",
                 FooterContactMobile = "089123456789",
                 FooterContactEmail = "testemail@gmail.com",
-                FooterCopyright = "Barberland 2023",
+                FooterCopyright = "Barberland " + DateTime.Now.Year.ToString(),
                 FacebookURL = "https://facebook.com",
                 TwitterURL = "https://x.com",
                 InstagramURL = "https://instagram.com"

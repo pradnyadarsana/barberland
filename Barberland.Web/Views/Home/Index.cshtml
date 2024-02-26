@@ -73,25 +73,25 @@
 <!-- </div> -->
 <!-- End Landing Page Section -->
 
-<!-- Start Shop Section -->
-<div id="shop" class="offset">
+<!-- Start Service Category Section -->
+<div id="service-category" class="offset">
     <div class="col-12 narrow text-center">
         <h1>Services</h1>
         <p class="lead">
             @Model.ServiceDescription
         </p>
-        <div id="ProductListSection">
+        <div id="ServiceCategoryListSection">
             @await Component.InvokeAsync("ServiceCategory", new { serviceCategories = Model.ServiceCategories, viewName = "HomeIndex" })
         </div>
-        <a href="@Url.Action("Index", "ServiceCategory")" class="btn btn-outline-secondary btn-md btn-product-home">
+        <a href="@Url.Action("Index", "ServiceCategory")" class="btn btn-outline-secondary btn-md btn-service-category-home">
             More Services
         </a>
     </div>
 </div>
-<!-- End Shop Section -->
+<!-- End Service Category Section -->
 
-<!-- Start Gallery Section -->
-<div id="gallery" class="home-page offset">
+<!-- Start Barbershop Section -->
+<div id="barbershop" class="home-page offset">
     <div class="fixed-background dark">
         <div class="row text-center">
             <div class="col-12 narrow">
@@ -103,11 +103,11 @@
             </div>
         </div> <!-- End Row Dark -->
         <div class="narrow">
-            @await Component.InvokeAsync("Barbershop", new { barbershops = Model.Barbershops, viewName = "HomeIndex"})
+            @await Component.InvokeAsync("Barbershop", new { barbershops = Model.Barbershops, viewName = "HomeIndexList"})
         </div>
         <div class="row text-center">
             <div class="col-12 narrow">
-                <a href="@Url.Action("Index", "Barbershop")" class="btn btn-outline-secondary btn-md btn-artwork-home">
+                <a href="@Url.Action("Index", "Barbershop")" class="btn btn-outline-secondary btn-md btn-barbershop-home">
                         More Barbershops
                     </a>
             </div>
@@ -119,7 +119,8 @@
         </div>
     </div> <!-- End Fixed Background -->
 </div>
-<!-- End Gallery Section -->
+<!-- End Barbershop Section -->
+
 <!-- Start Contact Us Section-->
 <div class="contact-us-section">
     @*@await Component.InvokeAsync("Home")*@

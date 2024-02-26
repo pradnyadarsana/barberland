@@ -16,7 +16,8 @@ public class HomeController : Controller
         _logger = logger;
         _homePageService = homePageService;
     }
-    
+
+    [HttpGet]
     public IActionResult Index()
     {
         HomeIndexViewModel indexViewModel = new();

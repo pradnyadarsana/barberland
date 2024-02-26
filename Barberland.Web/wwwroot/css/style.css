@@ -113,7 +113,7 @@ p, small, input, textarea, span, select, option {
 }
 /* ================================= HOME PAGE - END OF LANDING SECTION =================================*/
 
-/* ================================= HOME PAGE - PRODUCT SHOP SECTION =================================*/
+/* ================================= HOME PAGE - SERVICE CATEGORY SECTION =================================*/
 .narrow {
     width: 75%;
     margin: 1.5rem auto;
@@ -124,7 +124,7 @@ p, small, input, textarea, span, select, option {
         font-size: 3.5rem;
     }
 
-.btn-product-home {
+.btn-service-category-home {
     border-width: .16rem;
     border-radius: 0;
     padding: .6rem 1.2rem;
@@ -136,21 +136,21 @@ p, small, input, textarea, span, select, option {
     letter-spacing: .07rem;
 }
 
-    .btn-product-home:hover,
-    .btn-product-home:focus {
+    .btn-service-category-home:hover,
+    .btn-service-category-home:focus {
         border-color: #505962;
         background-color: rgba(0, 0, 0, 0.8);
         color: whitesmoke;
     }
 
-.card-product {
+.card-service-category {
     border: 1px solid transparent;
     color: inherit;
     text-decoration: none;
 }
 
-    .card-product:hover,
-    .card-product:focus {
+    .card-service-category:hover,
+    .card-service-category:focus {
         opacity: .8;
         background: #fcfcfc;
         border: 1px solid #d0d0d0;
@@ -160,12 +160,12 @@ p, small, input, textarea, span, select, option {
         text-decoration: none;
     }
 
-    .card-product .card-img-top img {
+    .card-service-category .card-img-top img {
         object-fit: cover;
     }
-/* ================================= HOME PAGE - END OF PRODUCT SHOP SECTION =================================*/
+/* ================================= HOME PAGE - END OF SERVICE CATEGORY SECTION =================================*/
 
-/* ================================= HOME PAGE - GALLERY SECTION =================================*/
+/* ================================= HOME PAGE - BARBERSHOP SECTION =================================*/
 .jumbotron {
     margin-bottom: 0;
     padding: 2rem 0 3.5rem;
@@ -199,7 +199,7 @@ h1.heading {
     font-size: 1.1rem;
 }
 
-#gallery.home-page .narrow {
+#barbershop.home-page .narrow {
     max-width: 75%;
     margin: auto;
     padding-top: 0rem;
@@ -224,13 +224,13 @@ h1.heading {
     margin-top: 1.5rem;
 }
 
-.card-artwork {
+.card-barbershop {
     border: 1px solid transparent;
     color: inherit;
     text-decoration: none;
 }
 
-.artwork-img-overlay {
+.barbershop-img-overlay {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -255,15 +255,15 @@ h1.heading {
     text-align: center;
 }
 
-.card-artwork .card-img-top img {
+.card-barbershop .card-img-top img {
     object-fit: cover;
 }
 
-.card-artwork:hover .artwork-img-overlay {
+.card-barbershop:hover .barbershop-img-overlay {
     opacity: 1;
 }
 
-.btn-artwork-home {
+.btn-barbershop-home {
     border-width: .16rem;
     border-radius: 0;
     padding: .6rem 1.2rem;
@@ -275,14 +275,14 @@ h1.heading {
     letter-spacing: .07rem;
 }
 
-    .btn-artwork-home:hover,
-    .btn-artwork-home:focus {
+    .btn-barbershop-home:hover,
+    .btn-barbershop-home:focus {
         border-color: #505962;
         background-color: rgba(255, 255, 255, 0.9);
         color: #1e1e1e;
     }
 
-/* ================================= HOME PAGE - END OF GALLERY SECTION =================================*/
+/* ================================= HOME PAGE - END OF BARBERSHOP SECTION =================================*/
 
 /* ================================= HOME PAGE - CONTACT US SECTION =================================*/
 .contact-us-form label {
@@ -318,7 +318,7 @@ footer {
     background-color: #212121;
     color: white;
     padding: 2rem 0 2rem;
-    margin-top: 1rem;
+    /*margin-top: 1rem;*/
 }
 
     footer img {
@@ -352,15 +352,15 @@ hr.socket {
 /* ================================= END OF FOOTER =================================*/
 
 
-/* ================================= PRODUCT SHOP PAGE =================================*/
-#shop.shop-page .landing {
-    height: 35vh;
+/* ================================= BARBERSHOP PAGE =================================*/
+#barbershop.barbershop-page .landing {
+    height: 48vh;
 }
 
-#shop.shop-page .caption {
-    top: 12.5%;
+#barbershop.barbershop-page .caption {
+    top: 7%;
 }
-/*#shop.shop-page .home-inner {
+/*#barbershop.barbershop-page .home-inner {
     background-image: url(../img/computers.png);
 }*/
 .badge-danger.badge-percent {
@@ -369,58 +369,58 @@ hr.socket {
     font-size: .75rem;
     vertical-align: middle;
 }
-/* ================================= END OF PRODUCT SHOP PAGE =================================*/
+/* ================================= END OF BARBERSHOP PAGE =================================*/
 
 /* ================================= PRODUCT DETAIL PAGE =================================*/
-#shop.product-detail-page .landing {
+#barbershop.product-detail-page .landing {
     height: 7vh;
 }
 
-#shop.product-detail-page #productCarousel {
+#barbershop.product-detail-page #productCarousel {
     height: fit-content;
 }
 
-#shop.product-detail-page .carousel-inner {
+#barbershop.product-detail-page .carousel-inner {
     height: fit-content;
 }
 
-#shop.product-detail-page .carousel-item {
+#barbershop.product-detail-page .carousel-item {
     height: fit-content;
 }
 
-    #shop.product-detail-page .carousel-item img {
+    #barbershop.product-detail-page .carousel-item img {
         object-fit: contain;
     }
 
-#shop.product-detail-page #productCarousel .carousel-indicators {
+#barbershop.product-detail-page #productCarousel .carousel-indicators {
     position: static;
     margin-top: 20px;
 }
 
-    #shop.product-detail-page #productCarousel .carousel-indicators > li {
+    #barbershop.product-detail-page #productCarousel .carousel-indicators > li {
         width: 100px;
         height: fit-content;
     }
 
-    #shop.product-detail-page #productCarousel .carousel-indicators li img {
+    #barbershop.product-detail-page #productCarousel .carousel-indicators li img {
         display: block;
         opacity: 0.5;
         object-fit: contain;
     }
 
-    #shop.product-detail-page #productCarousel .carousel-indicators li.active img {
+    #barbershop.product-detail-page #productCarousel .carousel-indicators li.active img {
         opacity: 1
     }
 
-    #shop.product-detail-page #productCarousel .carousel-indicators li:hover img {
+    #barbershop.product-detail-page #productCarousel .carousel-indicators li:hover img {
         opacity: 0.75
     }
 
-#shop.product-detail-page h1 {
+#barbershop.product-detail-page h1 {
     font-size: 3.2rem;
 }
 
-#shop.product-detail-page .price-text {
+#barbershop.product-detail-page .price-text {
     font-size: 1.5rem;
 }
 /* ================================= END OF PRODUCT DETAIL PAGE =================================*/
@@ -449,7 +449,7 @@ hr.socket {
     }
 
     .caption h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding-bottom: 1.2rem;
     }
 
@@ -478,11 +478,11 @@ hr.socket {
         padding-top: 2rem;
     }
 
-    #shop.product-detail-page h1 {
+    #barbershop.product-detail-page h1 {
         font-size: 2.2rem;
     }
 
-    #shop.product-detail-page .price-text {
+    #barbershop.product-detail-page .price-text {
         font-size: 1rem;
     }
 }

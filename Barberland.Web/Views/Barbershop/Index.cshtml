@@ -1,0 +1,77 @@
+﻿@model BarbershopIndexViewModel
+
+@{
+    ViewData["Title"] = "Barbershop";
+}
+
+<style>
+    .page-item.active .page-link {
+        color: #fff;
+        background-color: #505962;
+        border-color: #505962;
+    }
+
+    .page-link:focus,
+    .page-link:hover {
+        color: #5e6368;
+    }
+
+    .page-link {
+        color: #505962;
+    }
+</style>
+<div id="barbershop" class="barbershop-page offset">
+    <!-- Start Landing Page Section -->
+    <div class="landing">
+        <div class="home-wrap">
+            <div class="home-inner" style="background-image: url(@Model.MainHeaderBannerUrl);">
+            </div>
+        </div>
+    </div>
+
+    <div class="caption text-center">
+        <h1>@Model.HeaderTitleText</h1>
+        <h3>@Model.HeaderSubtitleText</h3>
+    </div>
+
+    <div class="col-12 narrow text-center">
+        <div class="row">
+            <div class="col-lg-9 col-md-12">
+                <div name="formSearch" class="form-inline input-group">
+                    <input id="SearchText" class="form-control border-right-0 border" type="search" placeholder="Search Barbershops">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary border-left-0 border" id="SearchButton" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <select id="OrderBy" class="form-select">
+                    <option value="newest" selected>Sort by newest</option>
+                    <option value="name-asc">Sort by name: A - Z</option>
+                    <option value="name-desc">Sort by name: Z - A</option>
+                </select>
+            </div>
+        </div>
+        <div id="BarbershopListSection">
+            @await Component.InvokeAsync("Barbershop", new { viewName = "BarbershopIndexList", barbershops = Model.Barbershops, PageNumber = Model.PageNumber, TotalPages = Model.TotalPages})
+        </div>
+    </div>
+</div>
+@section Scripts{
+
+    <script src="~/js/filter/filter-barbershop.js" asp-append-version="false"></script>
+    <script>
+        var queryStringParam = new URLSearchParams(window.location.search);
+        var filterModel = new FilterBarbershopController();
+        filterModel.redirectUrl = '@Url.Action("Index", "Barbershop")';
+        filterModel.SearchText = queryStringParam.get('searchtext');
+        filterModel.OrderBy = queryStringParam.get('orderby');
+        filterModel.Page = queryStringParam.get('page');
+
+        $(document).ready(function () {
+            filterModel.Initialise();
+        })
+    </script>
+}

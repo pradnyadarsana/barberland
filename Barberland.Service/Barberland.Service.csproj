@@ -9,5 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Barberland.Data\Barberland.Data.csproj" />
     <ProjectReference Include="..\Barberland.Model\Barberland.Model.csproj" />
+    <ProjectReference Include="..\Barberland.Utility\Barberland.Utility.csproj" />
   </ItemGroup>
 </Project>
