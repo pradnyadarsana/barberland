@@ -11,25 +11,21 @@ namespace Barberland.Web.ViewComponents
 		{
 		}
 
-        public IViewComponentResult Invoke(List<ServiceCategoryIndexModel> serviceCategories/*, int Page = 1, int TotalPages = 1, bool IsShowPagination = true*/, string viewName)
+        public IViewComponentResult Invoke(string viewName, List<ServiceCategoryIndexModel> serviceCategories, int pageNumber = 1, int totalPages = 1, bool isShowPagination = true)
         {
-            //ArtworkListComponentViewModel ViewModel = new();
+            ServiceCategoryComponentViewModel viewModel = new();
 
-            //ViewModel.Page = Page;
-            //ViewModel.TotalPages = TotalPages;
-            //ViewModel.IsShowPagination = IsShowPagination;
-            //ViewModel.Artworks = Artworks;
+            viewModel.PageNumber = pageNumber;
+            viewModel.TotalPages = totalPages;
+            viewModel.IsShowPagination = isShowPagination;
+            viewModel.ServiceCategories = serviceCategories;
 
             if (viewName == "HomeIndex")
             {
-                return View("HomeIndexList", serviceCategories);
+                return View("HomeIndexList", viewModel);
             }
-            //else
-            //{
-            //    return View("ArtworkList", ViewModel);
-            //}
 
-            return View("HomeIndexList", new List<ServiceCategoryIndexModel>());
+            return View("HomeIndexList", viewModel);
         }
     }
 }

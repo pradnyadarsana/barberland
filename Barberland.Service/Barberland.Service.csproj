@@ -11,4 +11,7 @@
     <ProjectReference Include="..\Barberland.Model\Barberland.Model.csproj" />
     <ProjectReference Include="..\Barberland.Utility\Barberland.Utility.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+  </ItemGroup>
 </Project>

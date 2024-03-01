@@ -1,7 +1,9 @@
 ﻿using System;
 using Barberland.Model;
 using Barberland.Service;
+using Barberland.Utility;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace Barberland.Web.Controllers
 {
@@ -14,7 +16,7 @@ namespace Barberland.Web.Controllers
 		{
 			_logger = logger;
             _barbershopService = barbershopService;
-		}
+        }
 
         [HttpGet]
         public IActionResult Index()
@@ -39,6 +41,25 @@ namespace Barberland.Web.Controllers
             viewModel = _barbershopService.GetIndexDataModel(paginationModel, searchModel);
 
             return View(viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult Detail(string barbershopPermalink)
+        {
+            #region Create Service Pagination Model
+            PaginationModel servicePaginationModel = new();
+            bool isPageParsed = int.TryParse(Request.Query["page"], out int pageNumber);
+            servicePaginationModel.PageNumber = isPageParsed ? pageNumber : 1;
+            servicePaginationModel.DataPerPage = 12;
+            #endregion
+
+            ResponseModel<BarbershopDetailViewModel> responseModel = _barbershopService.GetBarbershopDetail(barbershopPermalink, servicePaginationModel);
+            if(responseModel.StatusCode == 404)
+            {
+                return StatusCode(StatusCodes.Status404NotFound);
+            }
+
+            return View(responseModel.Object);
         }
     }
 }

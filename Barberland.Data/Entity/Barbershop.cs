@@ -11,6 +11,12 @@ namespace Barberland.Data.Entity
         public string? LogoImgUrl { get; set; }
         public required string Latitude { get; set; }
         public required string Longitude { get; set; }
+        public required string Address { get; set; }
+        public string? Subdistrict { get; set; }
+        public string? District { get; set; }
+        public required string City { get; set; }
+        public required string Province { get; set; }
+        public required int OperationalHour { get; set; }
 
         public virtual ICollection<ServiceCategory>? ServiceCategories { get; set; }
         public virtual ICollection<Order>? Orders { get; set; }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Barberland.Data.Repository;
 using Microsoft.Extensions.Logging;
 using Barberland.Model;
+using Barberland.Utility;
+using Microsoft.Extensions.Options;
 
 namespace Barberland.Service;
 
@@ -14,13 +16,15 @@ public interface IHomePageService
 public class HomePageService : IHomePageService
 {
     private readonly ILogger<HomePageService> _logger;
+    private readonly AppSettings _configs;
     private readonly IServiceCategoryRepository _serviceCategoryRepository;
     private readonly IServiceCategoryImageRepository _serviceCategoryImageRepository;
     private readonly IBarbershopRepository _barbershopRepository;
 
-    public HomePageService(ILogger<HomePageService> logger, IServiceCategoryRepository serviceCategoryRepository, IServiceCategoryImageRepository serviceCategoryImageRepository, IBarbershopRepository barbershopRepository)
+    public HomePageService(ILogger<HomePageService> logger, IOptions<AppSettings> configuration, IServiceCategoryRepository serviceCategoryRepository, IServiceCategoryImageRepository serviceCategoryImageRepository, IBarbershopRepository barbershopRepository)
     {
         _logger = logger;
+        _configs = configuration.Value;
         _serviceCategoryRepository = serviceCategoryRepository;
         _barbershopRepository = barbershopRepository;
         _serviceCategoryImageRepository = serviceCategoryImageRepository;
@@ -43,7 +47,7 @@ public class HomePageService : IHomePageService
             {
                 Name = service.Name,
                 BarbershopName = barbershop != null ? barbershop.Name : "",
-                ImgThumbnailUrl = serviceImgThumbnail != null ? serviceImgThumbnail.ImageUrl : "~/img/no-image-default.jpeg",
+                ImgThumbnailUrl = serviceImgThumbnail != null ? serviceImgThumbnail.ImageUrl : _configs.URLSettings.NoImageThumbnailURL,
                 Permalink = service.Permalink,
                 Price = service.Price
             };

@@ -81,7 +81,7 @@
             @Model.ServiceDescription
         </p>
         <div id="ServiceCategoryListSection">
-            @await Component.InvokeAsync("ServiceCategory", new { serviceCategories = Model.ServiceCategories, viewName = "HomeIndex" })
+            @await Component.InvokeAsync("ServiceCategory", new { serviceCategories = Model.ServiceCategories, viewName = "HomeIndex", isShowPagination = false })
         </div>
         <a href="@Url.Action("Index", "ServiceCategory")" class="btn btn-outline-secondary btn-md btn-service-category-home">
             More Services

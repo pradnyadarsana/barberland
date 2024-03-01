@@ -37,6 +37,7 @@
     <None Remove="Views\Shared\Components\Barbershop\" />
     <None Remove="Views\Shared\Components\ServiceCategory\" />
     <None Remove="Views\Barbershop\" />
+    <None Remove="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewComponents\" />
@@ -46,6 +47,7 @@
     <Folder Include="Views\Shared\Components\ServiceCategory\" />
     <Folder Include="Views\Barbershop\" />
     <Folder Include="wwwroot\js\filter\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\js\filter\" />
