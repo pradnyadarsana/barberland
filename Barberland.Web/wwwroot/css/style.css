@@ -392,58 +392,77 @@ hr.socket {
     }
 /* ================================= END OF BARBERSHOP PAGE =================================*/
 
-/* ================================= PRODUCT DETAIL PAGE =================================*/
-#barbershop.product-detail-page .landing {
+/* ================================= SERVICE CATEGORY DETAIL PAGE =================================*/
+#service-category-detail .landing {
     height: 7vh;
 }
 
-#barbershop.product-detail-page #productCarousel {
+#service-category-detail #serviceCatCarousel {
     height: fit-content;
 }
 
-#barbershop.product-detail-page .carousel-inner {
+#service-category-detail .carousel-inner {
     height: fit-content;
 }
 
-#barbershop.product-detail-page .carousel-item {
+#service-category-detail .carousel-item {
     height: fit-content;
 }
 
-    #barbershop.product-detail-page .carousel-item img {
+    #service-category-detail .carousel-item img {
         object-fit: contain;
     }
 
-#barbershop.product-detail-page #productCarousel .carousel-indicators {
+#service-category-detail #serviceCatCarousel .carousel-indicators {
     position: static;
     margin-top: 20px;
 }
 
-    #barbershop.product-detail-page #productCarousel .carousel-indicators > li {
-        width: 100px;
+    #service-category-detail #serviceCatCarousel .carousel-indicators button {
+        width: 70px;
         height: fit-content;
     }
 
-    #barbershop.product-detail-page #productCarousel .carousel-indicators li img {
-        display: block;
-        opacity: 0.5;
-        object-fit: contain;
-    }
+        #service-category-detail #serviceCatCarousel .carousel-indicators button img {
+            display: block;
+            opacity: 0.5;
+            object-fit: contain;
+        }
 
-    #barbershop.product-detail-page #productCarousel .carousel-indicators li.active img {
-        opacity: 1
-    }
+        #service-category-detail #serviceCatCarousel .carousel-indicators button.active img {
+            opacity: 0.9
+        }
 
-    #barbershop.product-detail-page #productCarousel .carousel-indicators li:hover img {
-        opacity: 0.75
-    }
+        #service-category-detail #serviceCatCarousel .carousel-indicators button:hover img {
+            opacity: 0.7
+        }
 
-#barbershop.product-detail-page h1 {
+#service-category-detail h1 {
     font-size: 3.2rem;
 }
 
-#barbershop.product-detail-page .price-text {
+#service-category-detail .price-text {
     font-size: 1.5rem;
 }
+
+#service-category-detail .btn-service-category-book {
+    border-width: .16rem;
+    border-radius: 0;
+    padding: .6rem 1.2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 1rem;
+    border-color: #505962;
+    color: #505962;
+    letter-spacing: .07rem;
+}
+
+    #service-category-detail .btn-service-category-book:hover,
+    #service-category-detail .btn-service-category-book:focus {
+        border-color: #505962;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: whitesmoke;
+    }
 /* ================================= END OF PRODUCT DETAIL PAGE =================================*/
 
 /* ================================= ARTWORK GALLERY PAGE =================================*/

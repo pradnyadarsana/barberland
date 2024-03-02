@@ -16,7 +16,7 @@ namespace Barberland.Data.Repository
 
         public IQueryable<ServiceCategoryImage> GetByServiceCategoryId(Guid serviceCategoryId)
         {
-            return context.ServiceCategoryImages.Where(x => x.ServiceCategoryId == serviceCategoryId);
+            return context.ServiceCategoryImages.Where(x => x.ServiceCategoryId == serviceCategoryId && !x.IsDeleted);
         }
     }
 }

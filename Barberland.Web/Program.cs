@@ -31,6 +31,7 @@ builder.Services.AddScoped<IBarbershopRepository, BarbershopRepository>();
 
 builder.Services.AddTransient<IHomePageService, HomePageService>();
 builder.Services.AddTransient<IBarbershopService, BarbershopService>();
+builder.Services.AddTransient<IServiceCategoryService, ServiceCategoryService>();
 
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
@@ -63,6 +64,11 @@ app.MapControllerRoute(
     name: "barbershop-profile",
     pattern: "{barbershopPermalink}",
     defaults: new { controller = "Barbershop", action = "Detail" });
+
+app.MapControllerRoute(
+    name: "service-category-detail",
+    pattern: "{barbershopPermalink}/{serviceCategoryPermalink}",
+    defaults: new { controller = "ServiceCategory", action = "Detail" });
 
 app.Run();
 
