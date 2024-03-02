@@ -369,6 +369,27 @@ hr.socket {
     font-size: .75rem;
     vertical-align: middle;
 }
+
+.barbershop-page .card-barbershop {
+    border: 1px solid transparent;
+    color: inherit;
+    text-decoration: none;
+}
+
+    .barbershop-page .card-barbershop:hover,
+    .barbershop-page .card-barbershop:focus {
+        opacity: .8;
+        background: #fcfcfc;
+        border: 1px solid #d0d0d0;
+        border-radius: .1rem;
+        cursor: pointer;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .barbershop-page .card-barbershop .card-img-top img {
+        object-fit: cover;
+    }
 /* ================================= END OF BARBERSHOP PAGE =================================*/
 
 /* ================================= PRODUCT DETAIL PAGE =================================*/
